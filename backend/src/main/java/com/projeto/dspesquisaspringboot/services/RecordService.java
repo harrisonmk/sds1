@@ -7,7 +7,10 @@ import com.projeto.dspesquisaspringboot.entities.Record;
 import com.projeto.dspesquisaspringboot.repositories.GameRepository;
 import com.projeto.dspesquisaspringboot.repositories.RecordRepository;
 import java.time.Instant;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -33,8 +36,15 @@ public class RecordService {
         entity.setGame(game);
 
         entity = repository.save(entity);
-        
+
         return new RecordDTO(entity);
+
+    }
+
+    @Transactional(readOnly = true) //true para operacoes de busca e false para operacoes de escrita
+    public Page<RecordDTO> findByMoments(Instant minDate, Instant maxDate, PageRequest pageRequest) {
+
+        return repository.findByMoments(minDate, maxDate, pageRequest).map(x -> new RecordDTO(x));
 
     }
 
