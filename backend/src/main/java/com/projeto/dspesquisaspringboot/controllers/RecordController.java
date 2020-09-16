@@ -4,11 +4,9 @@ import com.projeto.dspesquisaspringboot.dto.RecordDTO;
 import com.projeto.dspesquisaspringboot.dto.RecordInsertDTO;
 import com.projeto.dspesquisaspringboot.services.RecordService;
 import java.time.Instant;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,7 +36,7 @@ public class RecordController {
     @GetMapping
     public ResponseEntity<Page<RecordDTO>> findAll(
             @RequestParam(value = "min", defaultValue = "") String min,
-            @RequestParam(value = "max", defaultValue = "momen") String max,
+            @RequestParam(value = "max", defaultValue = "") String max,
             @RequestParam(value = "page", defaultValue = "0") Integer page, //atributo usado no parametro da uri , pagina padrao, variavel
             @RequestParam(value = "linesPerPage", defaultValue = "0") Integer linesPerPage,
             @RequestParam(value = "orderBy", defaultValue = "moment") String orderBy,
