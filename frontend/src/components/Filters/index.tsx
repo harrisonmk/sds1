@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 type Props = {
 
-    link: String;
+    link: string;
     linkText: string;
 
 }
@@ -12,7 +12,7 @@ type Props = {
 const Filters = ({link, linkText}: Props) => (
 
     <div className="filters-container records-actions">
-        <Link to="/charts">
+        <Link to={link}>
             <button className="action-filters">
                 {linkText}
             </button>
