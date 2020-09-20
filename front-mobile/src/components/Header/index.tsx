@@ -1,18 +1,26 @@
 import {StyleSheet, Text, View, Image} from 'react-native';
 import React from "react";
-import {RectButton} from 'react-native-gesture-handler';
-import {FontAwesome5 as Icon} from '@expo/vector-icons';
+import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
+import {useNavigation} from '@react-navigation/native';
 
 const Header = () => {
 
-    return (
+    const navigation = useNavigation();
 
+    const handleOnPress = () => {
+
+
+        navigation.navigate('Home');
+    }
+
+    return (
+        <TouchableWithoutFeedback onPress={handleOnPress}>
             <View style={styles.header}>
                 <Image source={require('../../assets/logo.png')}/>
                 <Text style={styles.textLogo1}>Big Game</Text>
                 <Text style={styles.textLogo2}>Survey</Text>
             </View>
-
+        </TouchableWithoutFeedback>
 
     );
 
