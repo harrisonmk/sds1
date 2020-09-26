@@ -1,4 +1,4 @@
-# sds1
+             # sds1
 
 # Back end
 
@@ -26,8 +26,8 @@
    
    # Funcionalidades
    
-    * exibe uma tabela paginada com algumas informações
-    * exibe um grafico dos jogos mais votados
+   * exibe uma tabela paginada com algumas informações
+   * exibe um grafico dos jogos mais votados
     
-    link do sistema https://keen-lewin-e73d69.netlify.app/
+   link do sistema https://keen-lewin-e73d69.netlify.app/
 
